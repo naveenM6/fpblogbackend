@@ -59,13 +59,13 @@ app.post("/login", async (req, res) => {
 
 app.post("/", async (req, res) => {
   const { id, userId, title, body } = req.body;
-  console.log(id, userId, title, body);
+  /* console.log(id, userId, title, body); */
   const query = `INSERT INTO 
         postdata (id,userId,title,body)
     VALUES
         (${parseInt(id)},${parseInt(userId)},'${title}','${body}');`;
   const userData = await database.run(query);
-  console.log(userData);
+  /* console.log(userData); */
   res.send("Successfully added");
 });
 
@@ -90,7 +90,6 @@ app.get("/posts/:userId", async (req, res) => {
 /* just to delete */
 
 app.delete("/", async (req, res) => {
-  const query = "delete from postdata where userId = 3;";
-  await database.run(query);
-  res.send("user Deleted successfully");
+  const query = `delete from postdata`;
+  const responseData = await database.run(query);
 });
