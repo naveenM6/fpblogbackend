@@ -1,0 +1,25 @@
+Post http://localhost:3000/login
+
+###
+
+POST http://localhost:3000/
+Content-Type: application/json
+
+{
+    "id" : "2",
+    "userId" : "2",
+    "title" : "ytcyc",
+    "body" : "niefnvlisev"
+}
+
+###
+
+GET http://localhost:3000/posts
+
+###
+
+GET http://localhost:3000/posts/0
+
+###
+
+DELETE http://localhost:3000/
